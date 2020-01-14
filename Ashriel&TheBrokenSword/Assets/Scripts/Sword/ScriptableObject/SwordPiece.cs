@@ -19,14 +19,20 @@ public class SwordPiece : ScriptableObject
         legend
     }
 
+    public enum Size // thick is higher damage but shorter, thin is has longer reach but less damage, balanced is a middle
+    {
+        thick,
+        balanced,
+        thin
+    }
+
     public PieceType type;
     public RarityType rarity;
+    public Size size;
 
     public string pieceName;
     public string description;
     public float power;//amount of damage it does, each piece has its own.
-    public int length;//how long the piece is
-    //higher length should mean less damage and vice versa
     public Sprite sprite;
 
 }
