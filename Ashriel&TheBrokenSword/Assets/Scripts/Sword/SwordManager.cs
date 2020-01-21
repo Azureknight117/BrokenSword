@@ -11,6 +11,7 @@ public class SwordManager : MonoBehaviour
     public SwordPiece mid;
     public SwordPiece tip;
 
+    public float hiltDamage;
     [HideInInspector]
     float totalDamage; //Combined damage of all pieces
 }

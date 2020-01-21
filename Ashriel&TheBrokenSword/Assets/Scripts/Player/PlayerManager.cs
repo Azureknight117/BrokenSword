@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /* Manages the player character as a whole, hp, i-frames and such
+     * 
+     * */
+
+    public int health;
+    bool isInvincible;
+    public BoxCollider2D coll;
+   
+
+    PlayerController controlScript;
+    bool gameStarted = false;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame()
     {
-        
+        gameStarted = true;
+        controlScript.ControllerStart();
     }
 }

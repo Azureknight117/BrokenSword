@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 187450821}
   - component: {fileID: 187450820}
   - component: {fileID: 187450822}
+  - component: {fileID: 187450823}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Sword
@@ -175,7 +176,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 10
   m_Sprite: {fileID: 4574055825614841866, guid: ea51e51d810583f4a85d41082052b4c3,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -195,14 +196,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187450819}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8194387, y: -0.2409733, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1720955855}
   - {fileID: 456096774}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1417906789}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &187450822
 MonoBehaviour:
@@ -218,8 +219,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   middlePieceHolder: {fileID: 1720955854}
   tipPieceHolder: {fileID: 456096773}
-  mid: {fileID: 11400000, guid: ebff4d4fd1f4aef4a9f2e6e02f2eac11, type: 2}
-  tip: {fileID: 11400000, guid: ced4375970fa6d5478c87faed87f32f5, type: 2}
+  mid: {fileID: 11400000, guid: 7878074e4db83ed4fb7adb6e0be9a2f9, type: 2}
+  tip: {fileID: 11400000, guid: 09709fd4cfe2e92429dc97542f01be2c, type: 2}
+  hiltDamage: 10
+--- !u!61 &187450823
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187450819}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00139907, y: 0.036376536}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.28453952, y: 0.44403636}
+  m_EdgeRadius: 0
 --- !u!1 &214704076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,7 +2254,7 @@ GameObject:
   - component: {fileID: 527962426}
   - component: {fileID: 527962425}
   m_Layer: 0
-  m_Name: 0x72_16x16DungeonTileset.v4_148
+  m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2294,7 +2322,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &721290513
 GameObject:
@@ -2350,9 +2378,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1117139090}
   - component: {fileID: 1117139089}
+  - component: {fileID: 1117139092}
+  - component: {fileID: 1117139091}
   m_Layer: 0
   m_Name: Wite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2374,7 +2404,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8bb8d736bbf6a1448873995a603cbd0d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2419,8 +2449,86 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1117139091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117139088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b9ce3554d51c54ab19e4187a96cd29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  damageAmount: 0
+  timeInvincible: 1
+--- !u!61 &1117139092
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117139088}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0013462901, y: -0.025579333}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.33575404, y: 0.44884133}
+  m_EdgeRadius: 0
+--- !u!4 &1233169509 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3064870189809009966, guid: 86525b06a406854469fb1f376e976a05,
+    type: 3}
+  m_PrefabInstance: {fileID: 1583861976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1417906788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1417906789}
+  m_Layer: 0
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1417906789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417906788}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.316, y: -0.415, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 187450821}
+  m_Father: {fileID: 1233169509}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1001 &1583861976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2533,6 +2641,21 @@ PrefabInstance:
       propertyPath: spriteR
       value: 
       objectReference: {fileID: 1899784970}
+    - target: {fileID: 3064870189809009938, guid: 86525b06a406854469fb1f376e976a05,
+        type: 3}
+      propertyPath: sword
+      value: 
+      objectReference: {fileID: 187450819}
+    - target: {fileID: 3064870189809009938, guid: 86525b06a406854469fb1f376e976a05,
+        type: 3}
+      propertyPath: canMove
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064870189809009938, guid: 86525b06a406854469fb1f376e976a05,
+        type: 3}
+      propertyPath: attackTime
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86525b06a406854469fb1f376e976a05, type: 3}
 --- !u!1 &1720955854
