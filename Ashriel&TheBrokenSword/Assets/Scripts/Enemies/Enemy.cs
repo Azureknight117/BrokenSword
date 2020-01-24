@@ -4,41 +4,44 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health;
+    public float maxHealth;
+    public float currentHealth;
     public int damageAmount;
     SpriteRenderer sRenderer;
     Color spriteColor;
     Material mat;
     public float timeInvincible = 0.15f;
 
-    bool isInvincible = false;
-    
+    [HideInInspector]
+    public bool isInvincible = false;
 
-
-    private void Start()
+    private void Awake()
     {
+        currentHealth = maxHealth;
         sRenderer = gameObject.GetComponent<SpriteRenderer>();
         mat = gameObject.GetComponent<SpriteRenderer>().material;
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void TakeDamage (float damage)
     {
-        if(collision.tag == "Sword" && !isInvincible)
+        if (currentHealth - damage > 0)
         {
-            Debug.Log("hit");
+            currentHealth -= damage;
             isInvincible = true;
             StartCoroutine("Flash");
+            Debug.Log(currentHealth);
+        }
+        else
+        {
+            currentHealth = 0;
+            Die();
         }
     }
 
     IEnumerator Flash()
     {
-        bool isFlashing = false;
+        //bool isFlashing = false;
         float flash = 1f;
         mat.SetFloat("_FlashAmount", flash);
         yield return new WaitForSeconds(timeInvincible);
@@ -53,5 +56,10 @@ public class Enemy : MonoBehaviour
         isFlashing = false;*/
         mat.SetFloat("_FlashAmount", 0);
         isInvincible = false;
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }

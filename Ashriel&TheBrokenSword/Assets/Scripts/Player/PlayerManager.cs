@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour
     public int health;
     bool isInvincible;
     public BoxCollider2D coll;
-   
+    public GameObject Sword;
 
     PlayerController controlScript;
     bool gameStarted = false;

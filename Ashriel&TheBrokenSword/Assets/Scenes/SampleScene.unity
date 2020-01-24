@@ -120,6 +120,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &108520855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3064870189809009939, guid: 86525b06a406854469fb1f376e976a05,
+    type: 3}
+  m_PrefabInstance: {fileID: 1583861976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab89fe8a6be17a4582521f6d72e7c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &108520858 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3064870189809009936, guid: 86525b06a406854469fb1f376e976a05,
+    type: 3}
+  m_PrefabInstance: {fileID: 1583861976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &187450819
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +239,8 @@ MonoBehaviour:
   tipPieceHolder: {fileID: 456096773}
   mid: {fileID: 11400000, guid: 7878074e4db83ed4fb7adb6e0be9a2f9, type: 2}
   tip: {fileID: 11400000, guid: 09709fd4cfe2e92429dc97542f01be2c, type: 2}
-  hiltDamage: 10
+  hiltDamage: 3
+  totalDamage: 0
 --- !u!61 &187450823
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -229,7 +248,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187450819}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -2253,6 +2272,8 @@ GameObject:
   m_Component:
   - component: {fileID: 527962426}
   - component: {fileID: 527962425}
+  - component: {fileID: 527962428}
+  - component: {fileID: 527962427}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -2277,7 +2298,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8bb8d736bbf6a1448873995a603cbd0d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2324,6 +2345,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &527962427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527962424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40830f6ada5dad744aedda0e385a2f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0
+  damageAmount: 3
+  timeInvincible: 0.5
+  isInvincible: 0
+  moveSpeed: 2
+  isChasing: 0
+--- !u!61 &527962428
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527962424}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &721290513
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,12 +2526,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1117139088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07b9ce3554d51c54ab19e4187a96cd29, type: 3}
+  m_Script: {fileID: 11500000, guid: 40830f6ada5dad744aedda0e385a2f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  damageAmount: 0
-  timeInvincible: 1
+  maxHealth: 15
+  currentHealth: 0
+  damageAmount: 3
+  timeInvincible: 0.5
+  isInvincible: 0
+  moveSpeed: 1
+  isChasing: 1
 --- !u!61 &1117139092
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2656,6 +2726,26 @@ PrefabInstance:
       propertyPath: attackTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3064870189809009938, guid: 86525b06a406854469fb1f376e976a05,
+        type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 108520855}
+    - target: {fileID: 3064870189809009939, guid: 86525b06a406854469fb1f376e976a05,
+        type: 3}
+      propertyPath: coll
+      value: 
+      objectReference: {fileID: 108520858}
+    - target: {fileID: 3064870189809009939, guid: 86525b06a406854469fb1f376e976a05,
+        type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064870189809009939, guid: 86525b06a406854469fb1f376e976a05,
+        type: 3}
+      propertyPath: Sword
+      value: 
+      objectReference: {fileID: 187450819}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86525b06a406854469fb1f376e976a05, type: 3}
 --- !u!1 &1720955854

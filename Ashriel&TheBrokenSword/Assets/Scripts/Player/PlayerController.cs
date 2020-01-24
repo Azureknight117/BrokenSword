@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public Animator anim;
     public float attackTime;
+    public PlayerManager manager;
 
     SpriteRenderer spriteR;
 
@@ -87,6 +88,7 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         anim.SetBool("Attack", true);
         StartCoroutine("AttackTimer");
+        manager.Sword.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     IEnumerator AttackTimer()
@@ -94,5 +96,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(attackTime);
         canMove = true;
         anim.SetBool("Attack", false);
+        manager.Sword.GetComponent<BoxCollider2D>().enabled = false;
     }
 }

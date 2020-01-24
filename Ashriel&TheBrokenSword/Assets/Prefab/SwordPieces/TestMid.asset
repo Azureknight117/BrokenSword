@@ -17,5 +17,5 @@ MonoBehaviour:
   size: 0
   pieceName: TestMid
   description: 
-  power: 3
+  power: 0
   sprite: {fileID: -537612006178497969, guid: ea51e51d810583f4a85d41082052b4c3, type: 3}
