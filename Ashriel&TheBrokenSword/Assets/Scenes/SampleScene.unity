@@ -235,8 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b16775edb3c8e444850fddb1a02c329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  middlePieceHolder: {fileID: 1720955854}
-  tipPieceHolder: {fileID: 456096773}
+  middlePieceHolder: {fileID: 1720955855}
+  tipPieceHolder: {fileID: 456096774}
   mid: {fileID: 11400000, guid: 7878074e4db83ed4fb7adb6e0be9a2f9, type: 2}
   tip: {fileID: 11400000, guid: 09709fd4cfe2e92429dc97542f01be2c, type: 2}
   hiltDamage: 3
@@ -2616,6 +2616,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3064870189809009939, guid: 86525b06a406854469fb1f376e976a05,
+        type: 3}
+      propertyPath: coll
+      value: 
+      objectReference: {fileID: 108520858}
+    - target: {fileID: 3064870189809009939, guid: 86525b06a406854469fb1f376e976a05,
+        type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3064870189809009939, guid: 86525b06a406854469fb1f376e976a05,
+        type: 3}
+      propertyPath: Sword
+      value: 
+      objectReference: {fileID: 187450819}
     - target: {fileID: 3064870189809009966, guid: 86525b06a406854469fb1f376e976a05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2731,21 +2746,6 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 108520855}
-    - target: {fileID: 3064870189809009939, guid: 86525b06a406854469fb1f376e976a05,
-        type: 3}
-      propertyPath: coll
-      value: 
-      objectReference: {fileID: 108520858}
-    - target: {fileID: 3064870189809009939, guid: 86525b06a406854469fb1f376e976a05,
-        type: 3}
-      propertyPath: health
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3064870189809009939, guid: 86525b06a406854469fb1f376e976a05,
-        type: 3}
-      propertyPath: Sword
-      value: 
-      objectReference: {fileID: 187450819}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86525b06a406854469fb1f376e976a05, type: 3}
 --- !u!1 &1720955854

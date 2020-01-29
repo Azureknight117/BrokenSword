@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SwordManager : MonoBehaviour
 {
-    public GameObject middlePieceHolder;
-    public GameObject tipPieceHolder;
+    public Transform middlePieceHolder;
+    public Transform tipPieceHolder;
 
     [Header("SwordPieces")]
     public SwordPiece mid;
