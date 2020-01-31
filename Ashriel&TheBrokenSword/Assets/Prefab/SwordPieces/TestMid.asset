@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   rarity: 0
-  size: 0
+  size: 2
   pieceName: TestMid
   description: 
-  power: 0
-  sprite: {fileID: -537612006178497969, guid: ea51e51d810583f4a85d41082052b4c3, type: 3}
+  power: 3
+  sprite: {fileID: -8017469576340135879, guid: a19daec2d0ed2c545825b763875197b7, type: 3}

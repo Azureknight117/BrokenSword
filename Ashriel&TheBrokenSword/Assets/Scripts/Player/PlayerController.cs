@@ -33,6 +33,11 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
+    public void ControllerStop()
+    {
+        canMove = false;
+    }
+
     private void Update()
     {
         GetInput();
@@ -88,7 +93,7 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         anim.SetBool("Attack", true);
         StartCoroutine("AttackTimer");
-        manager.Sword.GetComponent<BoxCollider2D>().enabled = true;
+        manager.Sword.SwordSwing();
     }
 
     IEnumerator AttackTimer()
@@ -96,6 +101,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(attackTime);
         canMove = true;
         anim.SetBool("Attack", false);
-        manager.Sword.GetComponent<BoxCollider2D>().enabled = false;
+        manager.Sword.StopSwing();
     }
 }

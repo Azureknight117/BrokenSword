@@ -32,7 +32,7 @@ public class SwordPiece : ScriptableObject
 
     public string pieceName;
     public string description;
-    public float power;//amount of damage it does, each piece has its own.
+    public int power;//amount of damage it does, each piece has its own.
     public Sprite sprite;
 
 }

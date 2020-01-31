@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float maxHealth;
-    public float currentHealth;
+    public int maxHealth;
+    int currentHealth;
     public int damageAmount;
     SpriteRenderer sRenderer;
     Color spriteColor;
@@ -23,14 +23,13 @@ public class Enemy : MonoBehaviour
     }
 
 
-    public void TakeDamage (float damage)
+    public void TakeDamage (int damage)
     {
         if (currentHealth - damage > 0)
         {
             currentHealth -= damage;
             isInvincible = true;
             StartCoroutine("Flash");
-            Debug.Log(currentHealth);
         }
         else
         {
@@ -39,21 +38,21 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag == "Player")
+        {
+            Debug.Log("Player");
+            collision.collider.GetComponent<PlayerManager>().TakeDamage(damageAmount);
+        }
+    }
+
     IEnumerator Flash()
     {
-        //bool isFlashing = false;
+
         float flash = 1f;
         mat.SetFloat("_FlashAmount", flash);
         yield return new WaitForSeconds(timeInvincible);
-        /*isFlashing = true;
-        float flash = 1f;
-        while (isFlashing && flash >= 0)
-        {
-            flash -= Time.deltaTime * timeInvincible;
-            mat.SetFloat("_FlashAmount", flash);
-            yield return null;
-        }
-        isFlashing = false;*/
         mat.SetFloat("_FlashAmount", 0);
         isInvincible = false;
     }

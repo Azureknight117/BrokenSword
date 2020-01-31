@@ -30,10 +30,18 @@ public class ChaserEnemy : Enemy
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Sword" && !isInvincible)
+        if (!isInvincible)
         {
-            StartCoroutine("Stun");
-            TakeDamage(collision.GetComponent<SwordManager>().totalDamage);
+            if (collision.tag == "Sword")
+            {
+                StartCoroutine("Stun");
+                TakeDamage(collision.GetComponent<SwordManager>().totalDamage);
+            }
+            else if (collision.tag == "SwordPiece")
+            {
+                StartCoroutine("Stun");
+                TakeDamage(collision.GetComponent<SwordPieceManager>().power);
+            }
         }
     }
 
