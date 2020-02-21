@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New SwordPiece", menuName = "SwordPiece")]
-public class SwordPiece : ScriptableObject
+public class SwordPiece : Item
 {
     public enum PieceType //Three types of sword pieces, a tip, mid, and full (a mid and a tip combined)
     {
@@ -30,9 +30,7 @@ public class SwordPiece : ScriptableObject
     public RarityType rarity;
     public Size size;
 
-    public string pieceName;
     public string description;
     public int power;//amount of damage it does, each piece has its own.
-    public Sprite sprite;
 
 }

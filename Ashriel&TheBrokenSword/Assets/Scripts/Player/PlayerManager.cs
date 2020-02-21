@@ -17,8 +17,8 @@ public class PlayerManager : MonoBehaviour
     public BoxCollider2D coll;
     public SwordManager Sword;
 
-    public Slider healthBar;
-    public int health;
+    public Image healthBar;
+    public int maxHealth;
     int currentHealth;
 
     public PlayerController controlScript;
@@ -27,7 +27,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         mat = gameObject.GetComponent<SpriteRenderer>().material;
-        currentHealth = health;
+        currentHealth = maxHealth;
     }
 
     public void StartGame()
@@ -60,7 +60,7 @@ public class PlayerManager : MonoBehaviour
 
     void HealthManager()
     {
-        healthBar.value = currentHealth;
+        healthBar.fillAmount = currentHealth / maxHealth;
     }
 
     void Die()
@@ -82,6 +82,11 @@ public class PlayerManager : MonoBehaviour
     public void EndGame()
     {
         gameStarted = false;
+        controlScript.ControllerStop();
+    }
+
+    public void PauseGame()
+    {
         controlScript.ControllerStop();
     }
 }

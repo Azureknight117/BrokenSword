@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     float yDirection;
 
     public bool canMove = false;
+    public bool paused = false;
 
     private void Start()
     {
@@ -30,49 +31,29 @@ public class PlayerController : MonoBehaviour
 
     public void ControllerStart()
     {
-        canMove = true;
+        paused = false;
     }
 
     public void ControllerStop()
     {
-        canMove = false;
+        paused = true;
     }
 
     private void Update()
     {
-        GetInput();
+        if (!paused)
+        {
+            GetInput();
+            Move();
+        }
     }
     void FixedUpdate()
     {
-        Move();
+        rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
     }
 
     void GetInput()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        if (Input.GetAxisRaw("Horizontal") > .5f || Input.GetAxisRaw("Horizontal") < -.5f) 
-        {
-            lastMove.x = movement.x;
-            lastMove.y = 0f;
-        }
-        if (Input.GetAxisRaw("Vertical") > .5f || Input.GetAxisRaw("Vertical") < -.5f)
-        {
-            lastMove.y = movement.y;
-            lastMove.x = 0f;
-        }
-
-        if (movement != Vector2.zero)
-        {
-            anim.SetFloat("Horizontal", movement.x);
-            anim.SetFloat("Vertical", movement.y);
-        }
-
-        anim.SetFloat("Speed", movement.sqrMagnitude);
-        anim.SetFloat("LastHorizontal", lastMove.x);
-        anim.SetFloat("LastVertical", lastMove.y);
-
         if (Input.GetButtonDown("Fire1"))
         {
             Attack();
@@ -84,7 +65,29 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
-            rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+
+            if (Input.GetAxisRaw("Horizontal") > .5f || Input.GetAxisRaw("Horizontal") < -.5f)
+            {
+                lastMove.x = movement.x;
+                lastMove.y = 0f;
+            }
+            if (Input.GetAxisRaw("Vertical") > .5f || Input.GetAxisRaw("Vertical") < -.5f)
+            {
+                lastMove.y = movement.y;
+                lastMove.x = 0f;
+            }
+
+            if (movement != Vector2.zero)
+            {
+                anim.SetFloat("Horizontal", movement.x);
+                anim.SetFloat("Vertical", movement.y);
+            }
+
+            anim.SetFloat("Speed", movement.sqrMagnitude);
+            anim.SetFloat("LastHorizontal", lastMove.x);
+            anim.SetFloat("LastVertical", lastMove.y);
         }
     }
 

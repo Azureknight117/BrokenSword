@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e61dc43cb1c4ad24c92efc975ed5eaa3, type: 3}
   m_Name: TestMid
   m_EditorClassIdentifier: 
+  itemName: TestPiece
+  sprite: {fileID: -8017469576340135879, guid: a19daec2d0ed2c545825b763875197b7, type: 3}
   type: 0
   rarity: 0
   size: 2
-  pieceName: TestMid
   description: 
   power: 3
-  sprite: {fileID: -8017469576340135879, guid: a19daec2d0ed2c545825b763875197b7, type: 3}
