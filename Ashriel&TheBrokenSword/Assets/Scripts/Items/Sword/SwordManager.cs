@@ -6,6 +6,7 @@ public class SwordManager : MonoBehaviour
 {
     public GameObject midPiece;
     public GameObject tipPiece;
+    public GameObject SwordMenu;
 
     public int hiltDamage;
     [HideInInspector]

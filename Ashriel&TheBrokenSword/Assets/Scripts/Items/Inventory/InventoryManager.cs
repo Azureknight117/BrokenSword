@@ -1,32 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class InventoryManager : MonoBehaviour
 {
-    public List<Item> listOfItems;
+    [Header("Inventory")]
+    public List<Item> StartingItems;
     public int maxItems;
-    public List<Button> inventorySlots;
-
+    public List<InventorySlotController> inventorySlots;
     public GameObject inventoryUI;
+
+    [Header("Sword Menu")]
+    public List<InventorySlotController> swordSlots;
+    public GameObject SwordMenuUI;
+
     public PlayerManager player;
     public bool menuUp = false;
+
+    public event Action<InventorySlotController> OnLeftClickEvent;
+    public event Action<InventorySlotController> OnPointerClickEvent;
+    public event Action<InventorySlotController> OnPointerEnterEvent;
+    public event Action<InventorySlotController> OnPointerExitEvent;
+    public event Action<InventorySlotController> OnBeginDragEvent;
+    public event Action<InventorySlotController> OnEndDragEvent;
+    public event Action<InventorySlotController> OnDragEvent;
+    public event Action<InventorySlotController> OnDropEvent;
 
     [Header("Debugging")]
     public Item testItem;
 
     private void Start()
     {
-        for (int i = 0; i < maxItems; i++)
+        for (int i = 0; i < StartingItems.Count; i++)
         {
-            if (listOfItems.Count > i)
-            {
-                continue;
-            }
-            listOfItems.Add(null);
+            //inventorySlots[i].OnPointerEnterEvent   += OnPointerEnterEvent;
+            //inventorySlots[i].OnPointerExitEvent    += OnPointerExitEvent;
+            inventorySlots[i].OnBeginDragEvent      += OnBeginDragEvent;
+            inventorySlots[i].OnEndDragEvent        += OnEndDragEvent;
+            inventorySlots[i].OnDragEvent           += OnDragEvent;
+            inventorySlots[i].OnDropEvent           += OnDropEvent;
+            inventorySlots[i].OnLeftClickEvent      += OnLeftClickEvent;
         }
-        UpdateInventorySlots();
+        SetStartingItems();
+    }
+
+    void SetStartingItems()
+    {
+        for (int i = 0; i < StartingItems.Count; i++)
+        {
+            inventorySlots[i].SetSlot(StartingItems[i]);
+        }
     }
 
     private void Update()
@@ -39,10 +65,9 @@ public class InventoryManager : MonoBehaviour
     {
         for(int i = 0; i < maxItems; i++)
         {
-            if(listOfItems[i] == null)
+            if(inventorySlots[i].item == null)
             {
-                listOfItems[i] = newItem;
-                UpdateInventorySlots();
+                inventorySlots[i].SetSlot(newItem);
                 return;
             }
         }
@@ -53,22 +78,13 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < maxItems; i++)
         {
-            if (i == index && listOfItems[i] != null)
+            if (i == index && inventorySlots[i] != null)
             {
-                listOfItems[i] = null;
-                UpdateInventorySlots();
+                inventorySlots[i].SetSlot(null);
                 return;
             }
         }
         Debug.Log("Inventory Empty");
-    }
-
-    public void UpdateInventorySlots()
-    {
-        for (int i = 0; i < maxItems; i++)
-        {
-            inventorySlots[i].GetComponent<InventorySlotController>().SetSlot(listOfItems[i]);
-        }
     }
 
     void OpenMenu ()
@@ -84,7 +100,7 @@ public class InventoryManager : MonoBehaviour
             else
             {
                 inventoryUI.SetActive(false);
-                player.PauseGame();
+                player.ResumeGame();
                 menuUp = false;
             }
         }
@@ -94,7 +110,7 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < maxItems; i++)
         {
-            if (listOfItems[i] == null)
+            if (inventorySlots[i].item == null)
             {
                 return false;
             }

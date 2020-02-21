@@ -50,40 +50,37 @@ public class InventorySlotController : MonoBehaviour , IPointerClickHandler, IPo
     {
         if(eventData != null && eventData.button == PointerEventData.InputButton.Left)
         {
-            if(OnLeftClickEvent != null)
-            {
-                OnLeftClickEvent(this);
-            }
+            OnLeftClickEvent?.Invoke(this);
         }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+      // throw new System.NotImplementedException();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        OnBeginDragEvent?.Invoke(this);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        OnEndDragEvent?.Invoke(this);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        OnDragEvent?.Invoke(this);
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        OnDropEvent?.Invoke(this);
     }
 }

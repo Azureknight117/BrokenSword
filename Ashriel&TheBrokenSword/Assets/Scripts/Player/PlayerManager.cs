@@ -89,4 +89,9 @@ public class PlayerManager : MonoBehaviour
     {
         controlScript.ControllerStop();
     }
+
+    public void ResumeGame()
+    {
+        controlScript.ControllerStart();
+    }
 }
