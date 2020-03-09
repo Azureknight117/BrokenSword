@@ -7,21 +7,23 @@ public class SwordPieceManager : MonoBehaviour
     public SwordPiece piece;
     public SpriteRenderer spriteRenderer;
     public BoxCollider2D boxCollider;
+    public bool swordDisabled = true;
     public int power;
 
 
     public void SetSwordPiece()
     {
-        if (piece.sprite != null)
+        if (piece != null)
         {
             spriteRenderer.sprite = piece.sprite;
             Vector2 s = spriteRenderer.sprite.bounds.size;
+            boxCollider.enabled = true;
             boxCollider.size = s;
             power = piece.power;
         }
         else
         {
-            Debug.Log("ahh");
+            boxCollider.enabled = false;
         }
     }
 

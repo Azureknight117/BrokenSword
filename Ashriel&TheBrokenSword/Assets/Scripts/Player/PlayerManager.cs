@@ -18,8 +18,8 @@ public class PlayerManager : MonoBehaviour
     public SwordManager Sword;
 
     public Image healthBar;
-    public int maxHealth;
-    int currentHealth;
+    public float maxHealth;
+    float currentHealth;
 
     public PlayerController controlScript;
     bool gameStarted = false;

@@ -3447,9 +3447,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a740e4310ef64a64d84477afa5cf0d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  piece: {fileID: 0}
+  piece: {fileID: 11400000, guid: 09709fd4cfe2e92429dc97542f01be2c, type: 2}
   spriteRenderer: {fileID: 456096776}
   boxCollider: {fileID: 456096777}
+  swordDisabled: 1
   power: 0
 --- !u!212 &456096776
 SpriteRenderer:
@@ -5405,7 +5406,7 @@ RectTransform:
   m_GameObject: {fileID: 1318901461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1}
   m_Children: []
   m_Father: {fileID: 1125360575}
   m_RootOrder: 0
@@ -5428,7 +5429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5849056, g: 0.31176573, b: 0.31176573, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5888,7 +5889,7 @@ PrefabInstance:
     - target: {fileID: 3064870189809009939, guid: 86525b06a406854469fb1f376e976a05,
         type: 3}
       propertyPath: maxHealth
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3064870189809009938, guid: 86525b06a406854469fb1f376e976a05,
         type: 3}
@@ -6264,9 +6265,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a740e4310ef64a64d84477afa5cf0d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  piece: {fileID: 0}
+  piece: {fileID: 11400000, guid: 7878074e4db83ed4fb7adb6e0be9a2f9, type: 2}
   spriteRenderer: {fileID: 1720955858}
   boxCollider: {fileID: 1720955857}
+  swordDisabled: 1
   power: 0
 --- !u!61 &1720955857
 BoxCollider2D:

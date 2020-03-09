@@ -33,8 +33,14 @@ public class SwordManager : MonoBehaviour
     public void SwordSwing()
     {
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        midPiece.GetComponent<BoxCollider2D>().enabled = true;
-        tipPiece.GetComponent<BoxCollider2D>().enabled = true;
+        if (midPiece.GetComponent<SwordPieceManager>().piece != null)
+        {
+            midPiece.GetComponent<BoxCollider2D>().enabled = true;
+        }
+        if (tipPiece.GetComponent<SwordPieceManager>().piece != null)
+        {
+            tipPiece.GetComponent<BoxCollider2D>().enabled = true;
+        }
     }
 
     public void StopSwing()
