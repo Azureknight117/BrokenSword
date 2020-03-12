@@ -11,19 +11,24 @@ public class SwordPieceManager : MonoBehaviour
     public int power;
 
 
-    public void SetSwordPiece()
+    public void SetSwordPiece(SwordPiece p)
     {
-        if (piece != null)
+        if (p != null)
         {
-            spriteRenderer.sprite = piece.sprite;
+            piece = p;
+            spriteRenderer.sprite = p.sprite;
             Vector2 s = spriteRenderer.sprite.bounds.size;
             boxCollider.enabled = true;
             boxCollider.size = s;
-            power = piece.power;
+            power = p.power;
         }
         else
         {
+            piece = null;
+            spriteRenderer.sprite = null;
             boxCollider.enabled = false;
+            power = 0;
+
         }
     }
 

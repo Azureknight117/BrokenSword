@@ -18,7 +18,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject SwordMenuUI;
 
     public PlayerManager player;
-    public bool menuUp = false;
+
 
     public event Action<InventorySlotController> OnLeftClickEvent;
     public event Action<InventorySlotController> OnPointerClickEvent;
@@ -34,10 +34,10 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < StartingItems.Count; i++)
+        for (int i = 0; i < inventorySlots.Count; i++)
         {
-            //inventorySlots[i].OnPointerEnterEvent   += OnPointerEnterEvent;
-            //inventorySlots[i].OnPointerExitEvent    += OnPointerExitEvent;
+            inventorySlots[i].OnPointerEnterEvent   += OnPointerEnterEvent;
+            inventorySlots[i].OnPointerExitEvent    += OnPointerExitEvent;
             inventorySlots[i].OnBeginDragEvent      += OnBeginDragEvent;
             inventorySlots[i].OnEndDragEvent        += OnEndDragEvent;
             inventorySlots[i].OnDragEvent           += OnDragEvent;
@@ -57,7 +57,6 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        OpenMenu();
         AddItemToInv();
     }
 
@@ -85,25 +84,6 @@ public class InventoryManager : MonoBehaviour
             }
         }
         Debug.Log("Inventory Empty");
-    }
-
-    void OpenMenu ()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            if (!menuUp)
-            {
-                inventoryUI.SetActive(true);
-                player.PauseGame();
-                menuUp = true;
-            }
-            else
-            {
-                inventoryUI.SetActive(false);
-                player.ResumeGame();
-                menuUp = false;
-            }
-        }
     }
 
     public bool IsFull ()

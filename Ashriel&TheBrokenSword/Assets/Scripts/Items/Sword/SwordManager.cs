@@ -26,8 +26,8 @@ public class SwordManager : MonoBehaviour
 
     void GetSwordPieces()
     {
-        midPiece.GetComponent<SwordPieceManager>().SetSwordPiece();
-        tipPiece.GetComponent<SwordPieceManager>().SetSwordPiece();
+        midPiece.GetComponent<SwordPieceManager>().SetSwordPiece(midPiece.GetComponent<SwordPieceManager>().piece);
+        tipPiece.GetComponent<SwordPieceManager>().SetSwordPiece(tipPiece.GetComponent<SwordPieceManager>().piece);
     }
 
     public void SwordSwing()

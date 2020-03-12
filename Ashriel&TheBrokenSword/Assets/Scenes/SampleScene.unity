@@ -251,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   image: {fileID: 2056007651}
+  isSwordSlot: 0
 --- !u!114 &81599646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,7 +510,6 @@ GameObject:
   - component: {fileID: 143923598}
   - component: {fileID: 143923600}
   - component: {fileID: 143923599}
-  - component: {fileID: 143923601}
   m_Layer: 5
   m_Name: SwordPanel
   m_TagString: Untagged
@@ -574,18 +574,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143923597}
   m_CullTransparentMesh: 0
---- !u!114 &143923601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143923597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5d244de64a9c5b46ae0976cc3e64937, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &154392374
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -880,6 +868,7 @@ MonoBehaviour:
   SwordPieces:
   - {fileID: 1842741762}
   - {fileID: 1097264050}
+  sword: {fileID: 0}
 --- !u!1 &214704076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2813,7 +2802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3000,6 +2989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   image: {fileID: 904528030}
+  isSwordSlot: 0
 --- !u!114 &392921291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3144,6 +3134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   image: {fileID: 1718892056}
+  isSwordSlot: 0
 --- !u!114 &416596367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3327,7 +3318,6 @@ GameObject:
   - component: {fileID: 454241203}
   - component: {fileID: 454241205}
   - component: {fileID: 454241204}
-  - component: {fileID: 454241206}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -3390,18 +3380,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454241202}
   m_CullTransparentMesh: 0
---- !u!114 &454241206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454241202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e782a6d1101284cab17a4bbca8aedc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &456096773
 GameObject:
   m_ObjectHideFlags: 0
@@ -3447,7 +3425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a740e4310ef64a64d84477afa5cf0d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  piece: {fileID: 11400000, guid: 09709fd4cfe2e92429dc97542f01be2c, type: 2}
+  piece: {fileID: 0}
   spriteRenderer: {fileID: 456096776}
   boxCollider: {fileID: 456096777}
   swordDisabled: 1
@@ -4029,7 +4007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4102,7 +4080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4222,6 +4200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   image: {fileID: 1118115981}
+  isSwordSlot: 0
 --- !u!114 &792322886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4516,6 +4495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   image: {fileID: 454241204}
+  isSwordSlot: 1
 --- !u!114 &1097264051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4617,7 +4597,6 @@ GameObject:
   - component: {fileID: 1103484248}
   - component: {fileID: 1103484250}
   - component: {fileID: 1103484249}
-  - component: {fileID: 1103484251}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -4680,18 +4659,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103484247}
   m_CullTransparentMesh: 0
---- !u!114 &1103484251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103484247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e782a6d1101284cab17a4bbca8aedc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1112285893 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3064870189809009938, guid: 86525b06a406854469fb1f376e976a05,
@@ -4882,7 +4849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4995,6 +4962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   image: {fileID: 255769681}
+  isSwordSlot: 0
 --- !u!114 &1231000570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5145,6 +5113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   image: {fileID: 154392376}
+  isSwordSlot: 0
 --- !u!114 &1257731470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5289,6 +5258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   image: {fileID: 631052796}
+  isSwordSlot: 0
 --- !u!114 &1297555533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5503,7 +5473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5610,6 +5580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   image: {fileID: 1324686407}
+  isSwordSlot: 0
 --- !u!114 &1425386950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5754,6 +5725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   image: {fileID: 644143243}
+  isSwordSlot: 0
 --- !u!114 &1542620352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6198,7 +6170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6265,7 +6237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a740e4310ef64a64d84477afa5cf0d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  piece: {fileID: 11400000, guid: 7878074e4db83ed4fb7adb6e0be9a2f9, type: 2}
+  piece: {fileID: 0}
   spriteRenderer: {fileID: 1720955858}
   boxCollider: {fileID: 1720955857}
   swordDisabled: 1
@@ -6375,10 +6347,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50743b1af40b7694585ab371431ebe2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1112285893}
+  player: {fileID: 108520855}
+  sword: {fileID: 187450822}
+  invenUI: {fileID: 319348213}
   inventory: {fileID: 1796467109}
   pauseMenu: {fileID: 610306676}
   paused: 0
+  menuUp: 0
 --- !u!4 &1733061178
 Transform:
   m_ObjectHideFlags: 0
@@ -6541,11 +6516,12 @@ MonoBehaviour:
   - {fileID: 81599645}
   - {fileID: 1231000569}
   - {fileID: 792322885}
+  - {fileID: 1842741762}
+  - {fileID: 1097264050}
   inventoryUI: {fileID: 319348213}
   swordSlots: []
   SwordMenuUI: {fileID: 187450819}
   player: {fileID: 108520855}
-  menuUp: 0
   testItem: {fileID: 11400000, guid: 7878074e4db83ed4fb7adb6e0be9a2f9, type: 2}
 --- !u!1 &1842741760
 GameObject:
@@ -6601,6 +6577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   image: {fileID: 1103484249}
+  isSwordSlot: 1
 --- !u!114 &1842741763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6748,7 +6725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -18,7 +18,7 @@ public class MenuController : MonoBehaviour
         inventory.OnEndDragEvent += EndDrag;
         inventory.OnDragEvent += Drag;
         inventory.OnDropEvent += Drop;
-        inventory.OnLeftClickEvent += OnLeftClick;
+        //inventory.OnLeftClickEvent += OnLeftClick;
     }
 
     void BeginDrag(InventorySlotController itemSlot)
@@ -26,7 +26,7 @@ public class MenuController : MonoBehaviour
         if(itemSlot.item != null)
         {
             draggedSlot = itemSlot;
-            draggableItem.sprite = itemSlot.image.sprite;
+            draggableItem.sprite = itemSlot.item.sprite;
             draggableItem.transform.position = Input.mousePosition;
             draggableItem.enabled = true;
         }
@@ -48,15 +48,19 @@ public class MenuController : MonoBehaviour
 
     void Drop(InventorySlotController itemSlot)
     {
-        Item draggedItem = draggedSlot.item;
-        draggedSlot.item = itemSlot.item;
-        itemSlot.item = draggedItem;
+        if (itemSlot.isSwordSlot  && !(draggedSlot.item is SwordPiece))
+        {
+
+        }
+        else
+        {
+            if (itemSlot.IsItemValid(draggedSlot.item))
+            {
+                Item draggedItem = draggedSlot.item;
+                draggedSlot.SetSlot(itemSlot.item);
+                itemSlot.SetSlot(draggedItem);
+            }
+        }
+
     }
-
-    void OnLeftClick(InventorySlotController itemSlot)
-    {
-
-    }
-
-
 }

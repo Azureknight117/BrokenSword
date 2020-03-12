@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
      * 
      * */
     public float moveSpeed = 5f;
-
+    float moveSpeedHolder;
     public Rigidbody2D rb;
     public Animator anim;
     public float attackTime;
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         spriteR = gameObject.GetComponent<SpriteRenderer>();
+        moveSpeedHolder = moveSpeed;
     }
 
     public void ControllerStart()
@@ -94,6 +95,7 @@ public class PlayerController : MonoBehaviour
     void Attack()
     {
         canMove = false;
+        moveSpeed = 0;
         anim.SetBool("Attack", true);
         StartCoroutine("AttackTimer");
         manager.Sword.SwordSwing();
@@ -103,6 +105,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(attackTime);
         canMove = true;
+        moveSpeed = moveSpeedHolder;
         anim.SetBool("Attack", false);
         manager.Sword.StopSwing();
     }
