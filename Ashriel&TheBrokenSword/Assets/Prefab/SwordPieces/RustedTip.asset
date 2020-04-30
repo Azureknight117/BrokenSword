@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e61dc43cb1c4ad24c92efc975ed5eaa3, type: 3}
-  m_Name: TestMid
+  m_Name: RustedTip
   m_EditorClassIdentifier: 
-  itemName: TestPiece
-  sprite: {fileID: -8017469576340135879, guid: a19daec2d0ed2c545825b763875197b7, type: 3}
-  type: 0
+  itemName: Rusted Tip
+  sprite: {fileID: -9207364278050060292, guid: a19daec2d0ed2c545825b763875197b7, type: 3}
+  type: 1
   rarity: 0
   size: 2
-  description: 
+  description: Challengers would bring all manner of weapons to claim victory, but
+    even the greatest weapons eventually meet the same fate as the simplest blade
   power: 3

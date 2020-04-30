@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e61dc43cb1c4ad24c92efc975ed5eaa3, type: 3}
-  m_Name: TestTip
+  m_Name: CaliburnTip
   m_EditorClassIdentifier: 
-  itemName: TestPiece
-  sprite: {fileID: -9207364278050060292, guid: a19daec2d0ed2c545825b763875197b7, type: 3}
+  itemName: Caliburn Tip
+  sprite: {fileID: -8229932249533814606, guid: a19daec2d0ed2c545825b763875197b7, type: 3}
   type: 1
-  rarity: 0
-  size: 2
-  description: 
-  power: 3
+  rarity: 2
+  size: 0
+  description: But one king was betrayed by those he could trust, and his great kingdom
+    fell to ruin, and the sword was lost. Forever awaiting the next heir.
+  power: 7

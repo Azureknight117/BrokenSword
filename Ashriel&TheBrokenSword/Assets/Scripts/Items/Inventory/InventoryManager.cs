@@ -60,7 +60,7 @@ public class InventoryManager : MonoBehaviour
         AddItemToInv();
     }
 
-    void AddToList(Item newItem)
+    public void AddToList(Item newItem)
     {
         for(int i = 0; i < maxItems; i++)
         {
