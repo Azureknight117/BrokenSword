@@ -9,10 +9,13 @@ public class GameManager : MonoBehaviour
     public GameObject invenUI;
     public InventoryManager inventory;
 
+
     public GameObject pauseMenu;
 
     public bool paused = false;
     public bool menuUp = false;
+
+
 
     private void Update()
     {

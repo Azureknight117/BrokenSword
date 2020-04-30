@@ -12,8 +12,11 @@ public class Enemy : MonoBehaviour
     Material mat;
     public float timeInvincible = 0.15f;
 
+    public List<Item> drops;
+
     [HideInInspector]
     public bool isInvincible = false;
+    public bool inRoom = false;
 
     private void Awake()
     {
@@ -59,6 +62,8 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        //Instantiate()
+        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         Destroy(gameObject);
     }
 }

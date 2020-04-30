@@ -6,7 +6,7 @@ public class ChaserEnemy : Enemy
 {
     public int moveSpeed;
     Transform target;
-    public bool isChasing = false;
+    public bool isChasing = true;
 
     private void Start()
     {
@@ -18,7 +18,10 @@ public class ChaserEnemy : Enemy
     {
         if (isChasing)
         {
-            Chase();
+            if (inRoom)
+            {
+                Chase();
+            }
         }
     }
 
