@@ -6,20 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4807ece36e77e4d43be1f2f5d7cc0df2
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
-    path: Assets/Scenes/DungeonRooms/EntranceStart.unity
-    guid: 81d6ae6e55b8b514eb8d12c11de5552d
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/42d501c2305ac08478436a4cc007fc58
-    guid: 42d501c2305ac08478436a4cc007fc58
-  - enabled: 1
-    path: Assets/Scenes/DungeonRooms/Entrance HallEmpty.unity
-    guid: 3da8d9f35b32dc64dad863e1df86b071
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/Entrance HallStart.unity
     guid: 555354c134a558646812c8fc764f606d
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Entrance HallEmpty.unity
+    guid: 3da8d9f35b32dc64dad863e1df86b071
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/Entrance HallEnd.unity
     guid: 6e8695c3fd50839448ddaa57ba2032fc
@@ -29,4 +32,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/Entrance HallTreasure.unity
     guid: 36ac089a14cc0af4994c4618bbf80ef6
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Entrance HallBasic3.unity
+    guid: eb1090be531ff8445b6dc72599799d83
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Entrance HallBasic2.unity
+    guid: d220f2d5f0da2fc4e82f3d76faadcc69
+  - enabled: 1
+    path: Assets/Scenes/DefeatScreen.unity
+    guid: 5b723aeccfb863346af2cbcc8b7a9594
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: fcf06fb7b32ada34d832de687d381020
   m_configObjects: {}

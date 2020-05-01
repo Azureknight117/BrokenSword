@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     void OpenMenu()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             if (!menuUp)
             {

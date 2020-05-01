@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     void GetInput()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space))
         {
             Attack();
             

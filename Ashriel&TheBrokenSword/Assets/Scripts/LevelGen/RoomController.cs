@@ -33,15 +33,6 @@ public class RoomController : MonoBehaviour
         instance = this;
     }
 
-    void Start ()
-    {
-        /*LoadRoom("Start", 0, 0);
-        LoadRoom("Empty", 1, 0);
-        LoadRoom("Empty", -1, 0);
-        LoadRoom("Empty", 0, 1);
-        LoadRoom("Empty", 0, -1);*/
-    }
-
     private void Update()
     {
         UpdateRoomQueue();
@@ -159,7 +150,7 @@ public class RoomController : MonoBehaviour
     public string GetRandomRoomName()
     {
         string[] possibleRooms = new string[] {
-            "Empty", "Basic1"
+            "Empty", "Basic1", "Basic2", "Basic3"
         };
 
         return possibleRooms[Random.Range(0, possibleRooms.Length)];
@@ -190,7 +181,6 @@ public class RoomController : MonoBehaviour
                     foreach(Enemy enemy in enemies)
                     {
                         enemy.inRoom = false;
-                        Debug.Log("Not in room");
                     }
 
                     foreach(Door door in room.GetComponentsInChildren<Door>())
@@ -214,7 +204,6 @@ public class RoomController : MonoBehaviour
                     foreach (Enemy enemy in enemies)
                     {
                         enemy.inRoom = true;
-                        Debug.Log("in room");
                     }
 
                     foreach (Door door in room.GetComponentsInChildren<Door>())
@@ -227,6 +216,14 @@ public class RoomController : MonoBehaviour
                     foreach (Door door in room.GetComponentsInChildren<Door>())
                     {
                         door.doorCollider.SetActive(false);
+                    }
+                }
+
+                Chest[] chests = room.GetComponentsInChildren<Chest>();
+                {
+                    foreach(Chest chest in chests)
+                    {
+                        chest.Spawn();
                     }
                 }
             }

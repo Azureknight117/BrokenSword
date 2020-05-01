@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     Material mat;
     public float timeInvincible = 0.15f;
 
-    public List<Item> drops;
+    public List<GameObject> drops;
 
     [HideInInspector]
     public bool isInvincible = false;
@@ -60,9 +60,22 @@ public class Enemy : MonoBehaviour
         isInvincible = false;
     }
 
+    void DropItem()
+    {
+        int itemToDrop = Random.Range(0, drops.Count + 3);
+        if(itemToDrop < drops.Count)
+        {
+            Instantiate(drops[itemToDrop], gameObject.transform.position, Quaternion.identity);
+        }
+        else
+        {
+            return;
+        }
+    }
+
     void Die()
     {
-        //Instantiate()
+        DropItem();
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         Destroy(gameObject);
     }

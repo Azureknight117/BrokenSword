@@ -124,6 +124,13 @@ MonoBehaviour:
   maxHealth: 12
   damageAmount: 3
   timeInvincible: 0.5
+  drops:
+  - {fileID: 4127104993734436200, guid: 1005bdd9c4d06704280fc869470cf02e, type: 3}
+  - {fileID: 4127104993734436200, guid: 2f667865908ed6741b95e8e5b9c421ea, type: 3}
+  - {fileID: 4127104993734436200, guid: f10e14230abe079479c2059f93579046, type: 3}
+  - {fileID: 4127104993734436200, guid: f10e14230abe079479c2059f93579046, type: 3}
+  - {fileID: 4127104993734436200, guid: bd11a96c6125a6b4b8454bc38bc3882f, type: 3}
+  - {fileID: 4127104993734436200, guid: c343bfb7f1a8f9f4aaa8470c90b6c660, type: 3}
   isInvincible: 0
   inRoom: 0
   moveSpeed: 1

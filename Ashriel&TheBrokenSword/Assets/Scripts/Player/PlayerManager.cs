@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -47,7 +48,7 @@ public class PlayerManager : MonoBehaviour
         {
             currentHealth -= damage;
             isInvincible = true;
-            controlScript.ControllerStop();
+            //controlScript.ControllerStop();
             StartCoroutine("Flash");
 
         }
@@ -76,13 +77,14 @@ public class PlayerManager : MonoBehaviour
         yield return new WaitForSeconds(timeInvincible);
         mat.SetFloat("_FlashAmount", 0);
         isInvincible = false;
-        controlScript.ControllerStart();
+        //controlScript.ControllerStart();
     }
 
     public void EndGame()
     {
         gameStarted = false;
         controlScript.ControllerStop();
+        SceneManager.LoadScene("DefeatScreen");
     }
 
     public void PauseGame()
